@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
 namespace MvcDemo.Controllers
 {
@@ -17,7 +13,7 @@ namespace MvcDemo.Controllers
 
 		public ActionResult Status(string userName)
 		{
-			return Content("Hello");
+			return Content("Hello " + userName);
 		}
 
 		public ActionResult About()
