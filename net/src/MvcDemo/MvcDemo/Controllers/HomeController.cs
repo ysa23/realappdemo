@@ -15,6 +15,11 @@ namespace MvcDemo.Controllers
 			return View();
 		}
 
+		public ActionResult Status(string userName)
+		{
+			return Content("Hello");
+		}
+
 		public ActionResult About()
 		{
 			ViewBag.Message = "Your app description page.";
