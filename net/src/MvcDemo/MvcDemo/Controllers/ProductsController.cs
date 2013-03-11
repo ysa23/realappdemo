@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System.Linq;
+using System.Web.Mvc;
 using MvcDemo.Domain.Products;
 
 namespace MvcDemo.Controllers
@@ -22,6 +23,15 @@ namespace MvcDemo.Controllers
 		public ActionResult Get(string id)
 		{
 			return Content(_repository.GetById(id).Description);
+		}
+
+		public ActionResult Query(string description)
+		{
+			var productDtos = _repository.Query(x => x.Description.Contains(description));
+
+			var productsModel = string.Join(",", productDtos.Select(x => string.Format("{0}:{1}", x.Id, x.Description)).ToArray());
+
+			return Content(productsModel);
 		}
 	}
 }

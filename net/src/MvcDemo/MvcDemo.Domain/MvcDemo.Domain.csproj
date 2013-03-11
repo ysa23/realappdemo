@@ -37,6 +37,7 @@
       <HintPath>..\packages\mongocsharpdriver.1.7.1\lib\net35\MongoDB.Driver.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -45,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MongoConfiguration.cs" />
     <Compile Include="ProductDto.cs" />
     <Compile Include="Products\ProductsRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

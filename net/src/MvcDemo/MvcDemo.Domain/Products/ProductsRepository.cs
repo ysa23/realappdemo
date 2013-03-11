@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using MongoDB.Bson;
 using MongoDB.Driver.Linq;
 
@@ -33,9 +34,9 @@ namespace MvcDemo.Domain.Products
 			return _mongoStorage.Get().AsQueryable().FirstOrDefault(x => x.Id == new ObjectId(id));
 		}
 
-		public IList<ProductDto> Query(Func<ProductDto, bool> predicate)
+		public IList<ProductDto> Query(Expression<Func<ProductDto, bool>> predicate)
 		{
-			return null;
+			return _mongoStorage.Get().AsQueryable().Where(predicate).ToArray();
 		}
 	}
 }
